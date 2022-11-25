@@ -130,10 +130,37 @@ namespace CalculatorWPF.ViewModels
                             currentValue = 0;
                             ShowValue = currentValue.ToString();
                             operatorCommandFlag = false;
+                            operatorEqualFlag = false;
                             previewValue = 0;
                             previewOperator = "+";
                         });
                 return _clearCommand; 
+            }
+
+        }
+        private ICommand _backCommand;
+
+        public ICommand BackCommand
+        {
+            get 
+            {
+                if (_backCommand == null)
+                    _backCommand = new RelayCommand<object>(
+                        (object o) =>
+                        {
+                            if (operatorCommandFlag || operatorEqualFlag)
+                                return;
+                            currentValue = currentValue / 10;
+                            ShowValue = currentValue.ToString();
+                        },
+                        (object o) =>
+                        {
+                            if (operatorEqualFlag || operatorCommandFlag)
+                                return false;
+                            else
+                                return true;
+                        });
+                return _backCommand; 
             }
 
         }
@@ -158,5 +185,48 @@ namespace CalculatorWPF.ViewModels
 
             return 0;
         }
+
+        private ICommand _keyDownCommand;
+
+        public ICommand KeyDownCommand
+        {
+            get 
+            {
+                if (_keyDownCommand == null)
+                    _keyDownCommand = new RelayCommand<object>(
+                        (object o) =>
+                        {
+                            KeyEventArgs eventArgs = o as KeyEventArgs;
+                            if (eventArgs is not null)
+                            {
+                                if (eventArgs.Key >= Key.NumPad0 && eventArgs.Key <= Key.NumPad9)
+                                    NumberCommand.Execute(((int)eventArgs.Key - 74).ToString());
+                                if (eventArgs.Key >= Key.D0 && eventArgs.Key <= Key.D9)
+                                    NumberCommand.Execute(((int)eventArgs.Key - 34).ToString());
+
+                                switch (eventArgs.Key)
+                                {
+                                    case Key.Add:
+                                        ArithmeticOperationsCommand.Execute("+");
+                                        break;
+                                    case Key.Subtract:
+                                        ArithmeticOperationsCommand.Execute("-");
+                                        break;
+                                    case Key.Multiply:
+                                        ArithmeticOperationsCommand.Execute("*");
+                                        break;
+                                    case Key.Divide:
+                                        ArithmeticOperationsCommand.Execute("/");
+                                        break;
+                                    case Key.:
+                                        ArithmeticOperationsCommand.Execute("-");
+                                        break;
+                                }
+                            }
+                        });
+                return _keyDownCommand;
+            }
+        }
+
     }
 }
