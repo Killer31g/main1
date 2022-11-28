@@ -10,7 +10,7 @@ namespace CalculatorWPF.ViewModels
 {
     class CalculatorOnpVM : ObserverVM
     {
-        private bool operatorCommandFlag = true;
+        private bool canExecuteArithmeticOperationCommandFlag = false;
 
         private string _showValue;
 
@@ -38,9 +38,9 @@ namespace CalculatorWPF.ViewModels
                         (object o) =>
                         {
                             ShowValue += o.ToString();
-                            operatorCommandFlag = false;
+                            canExecuteArithmeticOperationCommandFlag = true;
                         },
-                        (object o) => !operatorCommandFlag
+                        (object o) => !canExecuteArithmeticOperationCommandFlag
                         );
                 return _numberCommand;
             }
@@ -89,7 +89,7 @@ namespace CalculatorWPF.ViewModels
                         (object o) =>
                         {
                             ShowValue = "";
-                            operatorCommandFlag = true;
+                            canExecuteArithmeticOperationCommandFlag = false;
                         });
                 return _clearCommand;
             }
@@ -105,7 +105,26 @@ namespace CalculatorWPF.ViewModels
                     _backCommand = new RelayCommand<object>(
                         (object o) =>
                         {
-                            
+                            if (string.IsNullOrEmpty(ShowValue))
+                            {
+                                return;
+                            }
+
+                            if (canExecuteArithmeticOperationCommandFlag)
+                            {
+                                //trzy znaki
+                                ShowValue = ShowValue.Remove(ShowValue.Length - 3, 3);
+                            }
+                            else
+                            {
+                                //jeden znak
+                                ShowValue = ShowValue.Remove(ShowValue.Length - 1, 1);
+                            }
+
+                            if (string.IsNullOrEmpty(ShowValue) || ShowValue[^1] == ' ')
+                                canExecuteArithmeticOperationCommandFlag = false;
+                            else
+                                canExecuteArithmeticOperationCommandFlag = true;
                         });
                 return _backCommand;
             }
