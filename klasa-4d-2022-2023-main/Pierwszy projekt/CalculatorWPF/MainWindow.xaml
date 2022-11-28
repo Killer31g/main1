@@ -12,6 +12,7 @@
         <Style x:Key="baseButtonStyle" TargetType="{x:Type Button}">
             <Setter Property="Margin" Value="10"/>
             <Setter Property="FontSize" Value="50"/>
+            <Setter Property="Focusable" Value="False"/>
         </Style>
 
         <Style x:Key="numericButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource baseButtonStyle}">
@@ -40,7 +41,7 @@
         
     </Window.Resources>
     <Window.DataContext>
-        <viewmodels:CalculatorVM/>
+        <viewmodels:CalculatorOnpVM/>
     </Window.DataContext>
     
     <b:Interaction.Triggers>
