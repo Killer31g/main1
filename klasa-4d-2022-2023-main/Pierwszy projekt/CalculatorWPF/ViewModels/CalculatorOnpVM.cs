@@ -72,7 +72,9 @@ namespace CalculatorWPF.ViewModels
                     _equalCommand = new RelayCommand<object>(
                         (object o) =>
                         {
-                            
+                            string onpStr = GenerateOnp(ShowValue);
+
+                            ShowValue = CalculateOnp(onpStr);
                         });
                 return _equalCommand;
             }
@@ -183,6 +185,66 @@ namespace CalculatorWPF.ViewModels
                         });
                 return _keyDownCommand;
             }
+        }
+
+        private string GenerateOnp(string showValue)
+        {
+            string onpStr = "";
+
+            //konwersja ShowValue na ONP
+            List<string> outputList = new List<string>();
+            Stack<string> operatorStack = new Stack<string>();
+            Dictionary<string, int> operatorPriorityDictionary = new Dictionary<string, int>();
+            operatorPriorityDictionary.Add("+", 10);
+            operatorPriorityDictionary.Add("-", 10);
+            operatorPriorityDictionary.Add("*", 20);
+            operatorPriorityDictionary.Add("/", 20);
+            operatorPriorityDictionary.Add("%", 20);
+
+            //dodatkowe operatory
+            operatorPriorityDictionary.Add("^", 30);
+            operatorPriorityDictionary.Add("(", int.MinValue);
+
+            List<string> listOfElements = showValue.Split(' ').ToList();
+
+            foreach (string element in listOfElements)
+            {
+                if (int.TryParse(element, out _))
+                {
+                    outputList.Add(element);
+                }
+                else
+                {
+                    while (true)
+                    {
+                        if (operatorStack.Count == 0)
+                            break;
+
+                        string operatorOnTopOfStack = operatorStack.Peek();
+
+                        if (operatorOnTopOfStack >= element)
+                        {
+                            operatorOnTopOfStack = operatorStack.Pop();
+                            outputList.Add(operatorOnTopOfStack);
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+
+                    operatorStack.Push(element); 
+                }
+            }
+
+            onpStr = string.Join(" ", outputList);
+
+            return onpStr;
+        }
+
+        private string CalculateOnp(string onpStr)
+        {
+            return onpStr;
         }
     }
 }
