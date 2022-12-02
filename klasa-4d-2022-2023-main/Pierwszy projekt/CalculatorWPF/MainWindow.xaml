@@ -67,7 +67,7 @@
         </Grid.RowDefinitions>
 
         <ComboBox>
-            
+            we
         </ComboBox>
         
         <TextBox Margin="10,10,10,10"
