@@ -39,9 +39,7 @@ namespace CalculatorWPF.ViewModels
                         {
                             ShowValue += o.ToString();
                             canExecuteArithmeticOperationCommandFlag = true;
-                        },
-                        (object o) => !canExecuteArithmeticOperationCommandFlag
-                        );
+                        });
                 return _numberCommand;
             }
         }
@@ -81,7 +79,6 @@ namespace CalculatorWPF.ViewModels
         }
 
         private ICommand _clearCommand;
-
         public ICommand ClearCommand
         {
             get
@@ -97,8 +94,8 @@ namespace CalculatorWPF.ViewModels
             }
 
         }
-        private ICommand _backCommand;
 
+        private ICommand _backCommand;
         public ICommand BackCommand
         {
             get
@@ -134,7 +131,6 @@ namespace CalculatorWPF.ViewModels
         }
 
         private ICommand _keyDownCommand;
-
         public ICommand KeyDownCommand
         {
             get
@@ -187,6 +183,31 @@ namespace CalculatorWPF.ViewModels
             }
         }
 
+        private string CalculateOnp(string onpStr)
+        {
+            List<string> listOfElements = onpStr.Split(" ").ToList();
+            Stack<int> stackOfNumbers = new Stack<int>();
+
+            foreach (string element in listOfElements)
+            {
+                if (int.TryParse(element, out int number))
+                {
+                    stackOfNumbers.Push(number);
+                }
+                else
+                {
+                    int firstNumber = stackOfNumbers.Pop();
+                    int secondNumber = stackOfNumbers.Pop();
+
+                    int result = Calculate(secondNumber, firstNumber, element);
+
+                    stackOfNumbers.Push(result);
+                }
+            }
+
+            return onpStr;
+        }
+
         private string GenerateOnp(string showValue)
         {
             string onpStr = "";
@@ -202,8 +223,8 @@ namespace CalculatorWPF.ViewModels
             operatorPriorityDictionary.Add("%", 20);
 
             //dodatkowe operatory
-            operatorPriorityDictionary.Add("^", 30);
-            operatorPriorityDictionary.Add("(", int.MinValue);
+            //operatorPriorityDictionary.Add("^", 30);
+            //operatorPriorityDictionary.Add("(", int.MinValue);
 
             List<string> listOfElements = showValue.Split(' ').ToList();
 
@@ -222,7 +243,7 @@ namespace CalculatorWPF.ViewModels
 
                         string operatorOnTopOfStack = operatorStack.Peek();
 
-                        if (operatorOnTopOfStack >= element)
+                        if (operatorPriorityDictionary[operatorOnTopOfStack] >= operatorPriorityDictionary[element])
                         {
                             operatorOnTopOfStack = operatorStack.Pop();
                             outputList.Add(operatorOnTopOfStack);
@@ -237,14 +258,31 @@ namespace CalculatorWPF.ViewModels
                 }
             }
 
+            while (operatorStack.Count != 0)
+            {
+                string operatorOnTopOfStack = operatorStack.Pop();
+                outputList.Add(operatorOnTopOfStack);
+            }
+
             onpStr = string.Join(" ", outputList);
 
             return onpStr;
         }
 
-        private string CalculateOnp(string onpStr)
+        private int Calculate( int leftNumber, int rightNumber, string operatorToDo)
         {
-            return onpStr;
+            if (operatorToDo == "+")
+                return leftNumber + rightNumber;
+            else if (operatorToDo == "-")
+                return leftNumber - rightNumber; 
+            else if (operatorToDo == "*")
+                return leftNumber * rightNumber;
+            else if (operatorToDo == "/")
+                return leftNumber / rightNumber;
+            else if (operatorToDo == "%")
+                return leftNumber % rightNumber;
+
+            return 0;
         }
     }
 }
