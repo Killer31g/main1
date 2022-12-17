@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31624.102
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pierwszy projekt", "Pierwszy projekt\Pierwszy projekt.csproj", "{0E002ABA-A992-40D4-9FC1-19C36CA22C61}"
 EndProject
@@ -58,8 +58,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SliderRGB", "SliderRGB\SliderRGB.csproj", "{6B366A04-716D-4CDA-83FE-22392DE60B48}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorWPF", "CalculatorWPF\CalculatorWPF.csproj", "{12AE7F03-4883-41FA-994E-C8369AA3DC3D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "loginWPF", "loginWPF\loginWPF.csproj", "{5AEB5E38-AC7A-4ECA-82B1-93DA77F84797}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -371,18 +369,6 @@ Global
 		{12AE7F03-4883-41FA-994E-C8369AA3DC3D}.Release|x64.Build.0 = Release|Any CPU
 		{12AE7F03-4883-41FA-994E-C8369AA3DC3D}.Release|x86.ActiveCfg = Release|Any CPU
 		{12AE7F03-4883-41FA-994E-C8369AA3DC3D}.Release|x86.Build.0 = Release|Any CPU
-		{5AEB5E38-AC7A-4ECA-82B1-93DA77F84797}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5AEB5E38-AC7A-4ECA-82B1-93DA77F84797}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5AEB5E38-AC7A-4ECA-82B1-93DA77F84797}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{5AEB5E38-AC7A-4ECA-82B1-93DA77F84797}.Debug|x64.Build.0 = Debug|Any CPU
-		{5AEB5E38-AC7A-4ECA-82B1-93DA77F84797}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{5AEB5E38-AC7A-4ECA-82B1-93DA77F84797}.Debug|x86.Build.0 = Debug|Any CPU
-		{5AEB5E38-AC7A-4ECA-82B1-93DA77F84797}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5AEB5E38-AC7A-4ECA-82B1-93DA77F84797}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5AEB5E38-AC7A-4ECA-82B1-93DA77F84797}.Release|x64.ActiveCfg = Release|Any CPU
-		{5AEB5E38-AC7A-4ECA-82B1-93DA77F84797}.Release|x64.Build.0 = Release|Any CPU
-		{5AEB5E38-AC7A-4ECA-82B1-93DA77F84797}.Release|x86.ActiveCfg = Release|Any CPU
-		{5AEB5E38-AC7A-4ECA-82B1-93DA77F84797}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
