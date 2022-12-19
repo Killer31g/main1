@@ -30,7 +30,10 @@ namespace ClockWpfApp.ViewModels
 			{
 				if (_refreshCurrentTime == null)
 					_refreshCurrentTime = new RelayCommand<object>(
-						o => CurrentTime = DateTime.Now.ToString("HH:mm:ss:fff")
+						o =>
+						{
+							CurrentTime = DateTime.Now.ToString("HH:mm:ss");
+						}
 						);
 				return _refreshCurrentTime;
 			}
@@ -39,7 +42,7 @@ namespace ClockWpfApp.ViewModels
 
 		public CurrentTimeVM()
 		{
-			CurrentTime = DateTime.Now.ToString("HH:mm:ss:fff");
+			CurrentTime = DateTime.Now.ToString("HH:mm:ss");
 		}
 
 	}

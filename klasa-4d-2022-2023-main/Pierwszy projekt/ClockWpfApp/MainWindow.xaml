@@ -17,7 +17,8 @@
                    FontSize="60"
                    TextAlignment="Center"/>
         <Button Content="Odśwież godzinę"
-                Margin="0 10"/>
+                Margin="0 10"
+                Command="{Binding RefreshCurrentTime}"/>
 
     </StackPanel>
 </Window>
