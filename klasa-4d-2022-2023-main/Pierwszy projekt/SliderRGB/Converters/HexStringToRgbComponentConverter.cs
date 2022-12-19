@@ -44,6 +44,7 @@ namespace SliderRGB.Converters
                 return new object[] { Binding.DoNothing, Binding.DoNothing, Binding.DoNothing };
 
             string hexStr = value.ToString().ToUpper().Trim();
+            throw new Exception();
 
         }
     }
