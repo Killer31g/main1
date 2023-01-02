@@ -16,9 +16,9 @@
         <TextBlock Text="{Binding CurrentTime}"
                    FontSize="60"
                    TextAlignment="Center"/>
-        <Button Content="Odśwież godzinę"
+        <!--<Button Content="Odśwież godzinę"
                 Margin="0 10"
-                Command="{Binding RefreshCurrentTime}"/>
+                Command="{Binding RefreshCurrentTime}"/>-->
 
     </StackPanel>
 </Window>

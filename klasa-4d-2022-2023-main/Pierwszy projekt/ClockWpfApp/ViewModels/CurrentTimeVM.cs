@@ -18,6 +18,7 @@ namespace ClockWpfApp.ViewModels
 			set 
 			{ 
 				_CurrentTime = value;
+				CurrentTime = DateTime.Now.ToString("HH:mm:ss");
 				OnPropertyChanged(nameof(CurrentTime));
 			}
 		}
@@ -43,6 +44,8 @@ namespace ClockWpfApp.ViewModels
 		public CurrentTimeVM()
 		{
 			CurrentTime = DateTime.Now.ToString("HH:mm:ss");
+
+
 		}
 
 	}
