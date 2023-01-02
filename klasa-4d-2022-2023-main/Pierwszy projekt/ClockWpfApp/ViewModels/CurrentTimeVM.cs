@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using UtilitiesWpf;
@@ -18,7 +19,6 @@ namespace ClockWpfApp.ViewModels
 			set 
 			{ 
 				_CurrentTime = value;
-				CurrentTime = DateTime.Now.ToString("HH:mm:ss");
 				OnPropertyChanged(nameof(CurrentTime));
 			}
 		}
@@ -45,8 +45,17 @@ namespace ClockWpfApp.ViewModels
 		{
 			CurrentTime = DateTime.Now.ToString("HH:mm:ss");
 
+            Task task = new Task(() =>
+            {
+                while (true)
+                {
+                    CurrentTime = DateTime.Now.ToString("HH:mm:ss");
+                    Thread.Sleep(1000);
+                }
+            });
+            task.Start();
 
-		}
+        }
 
-	}
+    }
 }
