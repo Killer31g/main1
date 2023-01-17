@@ -22,6 +22,7 @@ namespace PhotoViewerWPFApp
     {
         public MainWindow()
         {
+            DataContext = new PhotoViewerVM(new ViewDialogs());
             InitializeComponent();
         }
     }

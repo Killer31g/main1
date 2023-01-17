@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using UtilitiesWpf;
 
@@ -24,8 +25,9 @@ namespace PhotoViewerWPFApp
 		}
 
 		private ICommand loadFromFileCommand;
+        private ViewDialogs viewDialogs;
 
-		public ICommand LoadFromFileCommand
+        public ICommand LoadFromFileCommand
 		{
 			get
 			{
@@ -33,18 +35,19 @@ namespace PhotoViewerWPFApp
 					loadFromFileCommand = new RelayCommand<object>(
 						x =>
 						{
-							OpenFileDialog openFileDialog= new OpenFileDialog();
-							openFileDialog.Filter = "Obrazy JPG|*.jpg|Obrazy PNG|*.png|Obrazy JPEG|*.jpeg";
-							if(openFileDialog.ShowDialog() == true)
-							{
-								ImagePath = openFileDialog.FileName;
-							}
+							string path = viewDialogs.GetPathToPicture();
+							if (path != null)
+								ImagePath = path;
 						}
 						);
 				return loadFromFileCommand;
 			}
 		}
 
+		public PhotoViewerVM(ViewDialogs viewDialogs)
+		{
+			this.viewDialogs = viewDialogs;
+		}
 
 	}
 }
