@@ -108,13 +108,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Konsolowa", "Konsolowa", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mobilna", "Mobilna", "{B77FAF21-A322-412F-93A9-13867F32BC35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotatkaConsoleApp", "NotatkaConsoleApp\NotatkaConsoleApp.csproj", "{5EB1B9AD-130F-428E-80D9-713DB0D2E9BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotatkaConsoleApp", "NotatkaConsoleApp\NotatkaConsoleApp.csproj", "{5EB1B9AD-130F-428E-80D9-713DB0D2E9BE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListaNotatekMobileApp.Android", "ListaNotatekMobileApp\ListaNotatekMobileApp.Android\ListaNotatekMobileApp.Android.csproj", "{22CEE7B6-7627-4A24-8E47-B117493FA032}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListaNotatekMobileApp.iOS", "ListaNotatekMobileApp\ListaNotatekMobileApp.iOS\ListaNotatekMobileApp.iOS.csproj", "{62188A26-C5A3-4FB0-B5AF-6CC9E36DC87A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListaNotatekMobileApp", "ListaNotatekMobileApp\ListaNotatekMobileApp\ListaNotatekMobileApp.csproj", "{F1DF65CE-9107-4BA4-A8EF-9B5037BC2249}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListaNotatekMobileApp", "ListaNotatekMobileApp\ListaNotatekMobileApp\ListaNotatekMobileApp.csproj", "{F1DF65CE-9107-4BA4-A8EF-9B5037BC2249}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2023 czerwiec 1", "2023 czerwiec 1", "{E2E38C45-98E0-482D-90B3-97D5C1E1EFC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "konsolowa", "konsolowa", "{A37998FA-8988-457A-A7BB-9335B997580A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SitoEratostenesa", "SitoEratostenesa\SitoEratostenesa.csproj", "{2AF583E4-53A5-4654-B73A-C0A20832E2F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -990,6 +996,26 @@ Global
 		{F1DF65CE-9107-4BA4-A8EF-9B5037BC2249}.Release|x64.Build.0 = Release|Any CPU
 		{F1DF65CE-9107-4BA4-A8EF-9B5037BC2249}.Release|x86.ActiveCfg = Release|Any CPU
 		{F1DF65CE-9107-4BA4-A8EF-9B5037BC2249}.Release|x86.Build.0 = Release|Any CPU
+		{2AF583E4-53A5-4654-B73A-C0A20832E2F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AF583E4-53A5-4654-B73A-C0A20832E2F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AF583E4-53A5-4654-B73A-C0A20832E2F3}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{2AF583E4-53A5-4654-B73A-C0A20832E2F3}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{2AF583E4-53A5-4654-B73A-C0A20832E2F3}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{2AF583E4-53A5-4654-B73A-C0A20832E2F3}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{2AF583E4-53A5-4654-B73A-C0A20832E2F3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2AF583E4-53A5-4654-B73A-C0A20832E2F3}.Debug|x64.Build.0 = Debug|Any CPU
+		{2AF583E4-53A5-4654-B73A-C0A20832E2F3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2AF583E4-53A5-4654-B73A-C0A20832E2F3}.Debug|x86.Build.0 = Debug|Any CPU
+		{2AF583E4-53A5-4654-B73A-C0A20832E2F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AF583E4-53A5-4654-B73A-C0A20832E2F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AF583E4-53A5-4654-B73A-C0A20832E2F3}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{2AF583E4-53A5-4654-B73A-C0A20832E2F3}.Release|iPhone.Build.0 = Release|Any CPU
+		{2AF583E4-53A5-4654-B73A-C0A20832E2F3}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{2AF583E4-53A5-4654-B73A-C0A20832E2F3}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{2AF583E4-53A5-4654-B73A-C0A20832E2F3}.Release|x64.ActiveCfg = Release|Any CPU
+		{2AF583E4-53A5-4654-B73A-C0A20832E2F3}.Release|x64.Build.0 = Release|Any CPU
+		{2AF583E4-53A5-4654-B73A-C0A20832E2F3}.Release|x86.ActiveCfg = Release|Any CPU
+		{2AF583E4-53A5-4654-B73A-C0A20832E2F3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1045,6 +1071,9 @@ Global
 		{22CEE7B6-7627-4A24-8E47-B117493FA032} = {B77FAF21-A322-412F-93A9-13867F32BC35}
 		{62188A26-C5A3-4FB0-B5AF-6CC9E36DC87A} = {B77FAF21-A322-412F-93A9-13867F32BC35}
 		{F1DF65CE-9107-4BA4-A8EF-9B5037BC2249} = {B77FAF21-A322-412F-93A9-13867F32BC35}
+		{E2E38C45-98E0-482D-90B3-97D5C1E1EFC0} = {0553FBFA-B38F-4286-A13C-8F8D57321688}
+		{A37998FA-8988-457A-A7BB-9335B997580A} = {E2E38C45-98E0-482D-90B3-97D5C1E1EFC0}
+		{2AF583E4-53A5-4654-B73A-C0A20832E2F3} = {A37998FA-8988-457A-A7BB-9335B997580A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {00AFA39A-3A7B-43E6-9DB5-5E4880830AF3}
