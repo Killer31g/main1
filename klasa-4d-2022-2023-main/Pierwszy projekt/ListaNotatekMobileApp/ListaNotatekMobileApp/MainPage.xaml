@@ -6,7 +6,7 @@
     <StackLayout BindingContext="{x:Reference thisPage}">
         <StackLayout Orientation="Horizontal">
             <Entry Placeholder="Nowy element"
-                   HorizontalOptions="Fill"
+                   HorizontalOptions="FillAndExpand"
                    x:Name="entryNewNote"/>
             <Button Text="DODAJ"
                     HorizontalOptions="End"
@@ -22,3 +22,4 @@
     </StackLayout>
 
 </ContentPage>
+z
