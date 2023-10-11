@@ -25,7 +25,7 @@ class SieveOfEratosthenes
         {
             if (isPrime[i] == 1)
             {
-                Console.Write(i + " ");
+                Console.Write(i + " ||  ");
             }
         }
 
