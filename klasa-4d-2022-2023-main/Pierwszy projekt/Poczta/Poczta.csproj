@@ -8,11 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="koperta.png" />
+    <None Remove="list.png" />
+    <None Remove="paczka.png" />
+    <None Remove="pocztowka.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="koperta.png" />
+    <Resource Include="list.png" />
+    <Resource Include="paczka.png" />
+    <Resource Include="pocztowka.png" />
   </ItemGroup>
 
 </Project>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PocztaApp"
         mc:Ignorable="d"
-        Title="Nadaj przesyłkę" Height="330" Width="573">
+        Title="Nadaj przesyłkę: XXXXXXXXXXX" Height="330" Width="573">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -18,7 +18,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <GroupBox Header="Typ Przesyłki" Margin="10,10,363,159" Grid.Row="0" Grid.Column="0">
+        <GroupBox Header="Typ Przesyłki" Margin="10,10,360,160" Grid.Row="0" Grid.Column="0">
             <StackPanel>
                 <RadioButton x:Name="PocztowkaRadioButton" Content="Pocztówka" IsChecked="True" />
                 <RadioButton x:Name="ListRadioButton" Content="List" />
@@ -26,7 +26,7 @@
             </StackPanel>
         </GroupBox>
 
-        <GroupBox Header="Dane Adresowe" Margin="301,18,0,97" RenderTransformOrigin="0.328,0.481" Grid.Row="0" Grid.Column="0">
+        <GroupBox Header="Dane Adresowe" Margin="300,20,0,100" RenderTransformOrigin="0.328,0.481" Grid.Row="0" Grid.Column="0">
             <StackPanel Margin="0,0,13,0" Height="140">
                 <StackPanel HorizontalAlignment="Left">
                     <Label Content="Ulica z numerem:" Width="119" />
