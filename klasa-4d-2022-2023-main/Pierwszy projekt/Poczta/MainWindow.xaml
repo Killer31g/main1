@@ -48,6 +48,6 @@
 
         <Button x:Name="ZatwierdzButton" Content="Zatwierdź" Click="ZatwierdzButton_Click" Margin="0,263,10,0" 
                 VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-        <Image x:Name="Image" Source="koperta.png" Margin="16,181,432,50" Grid.Row="0" Grid.Column="0"/>
+        <Image x:Name="Image" Source="list.png" Margin="16,181,432,50" Grid.Row="0" Grid.Column="0"/>
     </Grid>
 </Window>
