@@ -43,8 +43,8 @@
             </StackPanel>
         </GroupBox>
 
-        <Button x:Name="SprawdzCeneButton" Content="Sprawdź Cenę" Click="SprawdzCeneButton_Click" Margin="10,152,363,120" Grid.Row="0" Grid.Column="0"/>
-        <Label x:Name="CenaLabel" Content="Cena: " FontWeight="Bold" FontSize="16" Visibility="Hidden" Margin="121,202,277,56" Grid.Row="0" Grid.Column="0"/>
+        <Button x:Name="SprawdzCeneButton" Content="Sprawdź Cenę" Click="SprawdzCeneButton_Click" Margin="10,152,363,150" Grid.Row="0" Grid.Column="0"/>
+        <Label x:Name="CenaLabel" Content="Cena: " FontWeight="Bold" FontSize="16" Visibility="Hidden" Margin="150,202,277,56" Grid.Row="0" Grid.Column="0"/>
 
         <Button x:Name="ZatwierdzButton" Content="Zatwierdź" Click="ZatwierdzButton_Click" Margin="0,263,10,0" 
                 VerticalAlignment="Center" Grid.ColumnSpan="2"/>

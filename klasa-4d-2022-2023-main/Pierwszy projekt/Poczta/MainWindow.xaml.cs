@@ -57,14 +57,14 @@ namespace PocztaApp
 
         private bool SprawdzKodPocztowy(string kod)
         {
-            if (kod.Length != 5)
-            {
-                MessageBox.Show("Nieprawidłowa liczba cyfr w kodzie pocztowym");
-                return false;
-            }
             if (!CzyLiczby(kod))
             {
                 MessageBox.Show("Kod pocztowy powinien się składać z samych cyfr");
+                return false;
+            }
+            if (kod.Length != 5)
+            {
+                MessageBox.Show("Nieprawidłowa liczba cyfr w kodzie pocztowym");
                 return false;
             }
             return true;
