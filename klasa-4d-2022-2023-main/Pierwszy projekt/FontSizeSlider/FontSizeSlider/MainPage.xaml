@@ -4,9 +4,11 @@
              x:Class="FontSizeSlider.MainPage">
     <StackLayout Margin="20" BackgroundColor="#558B2F">
         <Label Text="Właściwości czcionki" FontSize="24" FontAttributes="Bold" TextColor="White" HorizontalOptions="CenterAndExpand" />
-        <Label Text="Rozmiar:" FontSize="18" TextColor="White" HorizontalOptions="CenterAndExpand" />
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Label Text="Rozmiar:" FontSize="18" TextColor="White" VerticalOptions="Center"/>
+            <Label x:Name="fontSizeLabel" FontSize="18" TextColor="White" VerticalOptions="Center"/>
+        </StackLayout>
         <Slider x:Name="fontSizeSlider" Maximum="40" Minimum="0" ValueChanged="OnSliderValueChanged" HorizontalOptions="FillAndExpand" />
-        <Label x:Name="fontSizeLabel" FontSize="18" TextColor="White" HorizontalOptions="CenterAndExpand" />
         <Label x:Name="quoteLabel" Text="Dzień dobry" FontSize="24" TextColor="Black" HorizontalOptions="CenterAndExpand" />
         <Button Text=">>" FontSize="24" FontAttributes="Bold" Clicked="OnButtonClick" HorizontalOptions="Center" />
     </StackLayout>
